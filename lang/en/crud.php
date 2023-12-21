@@ -94,6 +94,21 @@ return [
         ],
     ],
 
+    'warehouses' => [
+        'name' => 'Warehouses',
+        'index_title' => 'Warehouses List',
+        'new_title' => 'New Warehouse',
+        'create_title' => 'Create Warehouse',
+        'edit_title' => 'Edit Warehouse',
+        'show_title' => 'Show Warehouse',
+        'inputs' => [
+            'Name' => 'Warehouse Name',
+            'Description' => 'Warehouse Description',
+            'project_id' => 'Project Name',
+            'user_id' => 'Material Manager',
+        ],
+    ],
+
     'roles' => [
         'name' => 'Roles',
         'index_title' => 'Roles List',

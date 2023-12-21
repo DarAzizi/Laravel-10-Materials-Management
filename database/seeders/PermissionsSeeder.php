@@ -39,6 +39,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update projects']);
         Permission::create(['name' => 'delete projects']);
 
+        Permission::create(['name' => 'list warehouses']);
+        Permission::create(['name' => 'view warehouses']);
+        Permission::create(['name' => 'create warehouses']);
+        Permission::create(['name' => 'update warehouses']);
+        Permission::create(['name' => 'delete warehouses']);
+
         // Create user role and assign existing permissions
         $currentPermissions = Permission::all();
         $userRole = Role::create(['name' => 'user']);

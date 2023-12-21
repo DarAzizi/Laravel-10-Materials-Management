@@ -43,6 +43,11 @@
                         Contractors
                         </x-dropdown-link>
                         @endcan
+                        @can('view-any', App\Models\Warehouse::class)
+                        <x-dropdown-link href="{{ route('warehouses.index') }}">
+                        Warehouses
+                        </x-dropdown-link>
+                        @endcan
                 </x-nav-dropdown>
 
                     @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
@@ -208,6 +213,11 @@
                 @can('view-any', App\Models\Contractor::class)
                 <x-responsive-nav-link href="{{ route('contractors.index') }}">
                 Contractors
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Warehouse::class)
+                <x-responsive-nav-link href="{{ route('warehouses.index') }}">
+                Warehouses
                 </x-responsive-nav-link>
                 @endcan
 

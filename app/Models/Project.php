@@ -24,4 +24,9 @@ class Project extends Model
     {
         return $this->belongsTo(Contractor::class);
     }
+
+    public function warehouses()
+    {
+        return $this->hasMany(Warehouse::class);
+    }
 }

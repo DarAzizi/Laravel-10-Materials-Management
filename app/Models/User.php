@@ -38,6 +38,11 @@ class User extends Authenticatable
         'two_factor_confirmed_at' => 'datetime',
     ];
 
+    public function warehouses()
+    {
+        return $this->hasMany(Warehouse::class);
+    }
+
     public function isSuperAdmin(): bool
     {
         return $this->hasRole('super-admin');

@@ -7,6 +7,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ContractorController;
 use App\Http\Controllers\PermissionController;
 
@@ -42,4 +43,5 @@ Route::prefix('/')
         Route::resource('cities', CityController::class);
         Route::resource('projects', ProjectController::class);
         Route::resource('contractors', ContractorController::class);
+        Route::resource('warehouses', WarehouseController::class);
     });

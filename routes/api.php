@@ -8,10 +8,13 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\WarehouseController;
 use App\Http\Controllers\Api\ContractorController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\CityProjectsController;
 use App\Http\Controllers\Api\CountryCitiesController;
+use App\Http\Controllers\Api\UserWarehousesController;
+use App\Http\Controllers\Api\ProjectWarehousesController;
 use App\Http\Controllers\Api\ContractorProjectsController;
 
 /*
@@ -41,6 +44,16 @@ Route::name('api.')
 
         Route::apiResource('users', UserController::class);
 
+        // User Warehouses
+        Route::get('/users/{user}/warehouses', [
+            UserWarehousesController::class,
+            'index',
+        ])->name('users.warehouses.index');
+        Route::post('/users/{user}/warehouses', [
+            UserWarehousesController::class,
+            'store',
+        ])->name('users.warehouses.store');
+
         Route::apiResource('countries', CountryController::class);
 
         // Country Cities
@@ -67,6 +80,16 @@ Route::name('api.')
 
         Route::apiResource('projects', ProjectController::class);
 
+        // Project Warehouses
+        Route::get('/projects/{project}/warehouses', [
+            ProjectWarehousesController::class,
+            'index',
+        ])->name('projects.warehouses.index');
+        Route::post('/projects/{project}/warehouses', [
+            ProjectWarehousesController::class,
+            'store',
+        ])->name('projects.warehouses.store');
+
         Route::apiResource('contractors', ContractorController::class);
 
         // Contractor Projects
@@ -78,4 +101,6 @@ Route::name('api.')
             ContractorProjectsController::class,
             'store',
         ])->name('contractors.projects.store');
+
+        Route::apiResource('warehouses', WarehouseController::class);
     });
