@@ -39,6 +39,61 @@ return [
         ],
     ],
 
+    'countries' => [
+        'name' => 'Countries',
+        'index_title' => 'Countries List',
+        'new_title' => 'New Country',
+        'create_title' => 'Create Country',
+        'edit_title' => 'Edit Country',
+        'show_title' => 'Show Country',
+        'inputs' => [
+            'Name' => 'Name',
+            'Image' => 'Image',
+        ],
+    ],
+
+    'cities' => [
+        'name' => 'Cities',
+        'index_title' => 'Cities List',
+        'new_title' => 'New City',
+        'create_title' => 'Create City',
+        'edit_title' => 'Edit City',
+        'show_title' => 'Show City',
+        'inputs' => [
+            'Name' => 'Name',
+            'country_id' => 'Country',
+        ],
+    ],
+
+    'projects' => [
+        'name' => 'Projects',
+        'index_title' => 'Projects List',
+        'new_title' => 'New Project',
+        'create_title' => 'Create Project',
+        'edit_title' => 'Edit Project',
+        'show_title' => 'Show Project',
+        'inputs' => [
+            'Name' => 'Name',
+            'Description' => 'Description',
+            'city_id' => 'City',
+            'contractor_id' => 'Contractor',
+        ],
+    ],
+
+    'contractors' => [
+        'name' => 'Contractors',
+        'index_title' => 'Contractors List',
+        'new_title' => 'New Contractor',
+        'create_title' => 'Create Contractor',
+        'edit_title' => 'Edit Contractor',
+        'show_title' => 'Show Contractor',
+        'inputs' => [
+            'Name' => 'Name',
+            'Image' => 'Image',
+            'Description' => 'Description',
+        ],
+    ],
+
     'roles' => [
         'name' => 'Roles',
         'index_title' => 'Roles List',

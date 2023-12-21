@@ -23,6 +23,26 @@
                         Users
                         </x-dropdown-link>
                         @endcan
+                        @can('view-any', App\Models\Country::class)
+                        <x-dropdown-link href="{{ route('countries.index') }}">
+                        Countries
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\City::class)
+                        <x-dropdown-link href="{{ route('cities.index') }}">
+                        Cities
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\Project::class)
+                        <x-dropdown-link href="{{ route('projects.index') }}">
+                        Projects
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\Contractor::class)
+                        <x-dropdown-link href="{{ route('contractors.index') }}">
+                        Contractors
+                        </x-dropdown-link>
+                        @endcan
                 </x-nav-dropdown>
 
                     @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
@@ -168,6 +188,26 @@
                 @can('view-any', App\Models\User::class)
                 <x-responsive-nav-link href="{{ route('users.index') }}">
                 Users
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Country::class)
+                <x-responsive-nav-link href="{{ route('countries.index') }}">
+                Countries
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\City::class)
+                <x-responsive-nav-link href="{{ route('cities.index') }}">
+                Cities
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Project::class)
+                <x-responsive-nav-link href="{{ route('projects.index') }}">
+                Projects
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Contractor::class)
+                <x-responsive-nav-link href="{{ route('contractors.index') }}">
+                Contractors
                 </x-responsive-nav-link>
                 @endcan
 

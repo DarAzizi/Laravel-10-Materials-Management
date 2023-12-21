@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContractorController;
 use App\Http\Controllers\PermissionController;
 
 /*
@@ -34,4 +38,8 @@ Route::prefix('/')
         Route::resource('permissions', PermissionController::class);
 
         Route::resource('users', UserController::class);
+        Route::resource('countries', CountryController::class);
+        Route::resource('cities', CityController::class);
+        Route::resource('projects', ProjectController::class);
+        Route::resource('contractors', ContractorController::class);
     });
