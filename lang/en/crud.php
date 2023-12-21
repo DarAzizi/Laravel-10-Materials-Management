@@ -21,4 +21,43 @@ return [
         'saved' => 'Saved successfully',
         'removed' => 'Successfully removed',
     ],
+
+    'users' => [
+        'name' => 'Users',
+        'index_title' => 'Users List',
+        'new_title' => 'New User',
+        'create_title' => 'Create User',
+        'edit_title' => 'Edit User',
+        'show_title' => 'Show User',
+        'inputs' => [
+            'name' => 'Name',
+            'gender' => 'Gender',
+            'mobile' => 'Mobile',
+            'email' => 'Email',
+            'password' => 'Password',
+            'profile_photo_path' => 'Profile Photo Path',
+        ],
+    ],
+
+    'roles' => [
+        'name' => 'Roles',
+        'index_title' => 'Roles List',
+        'create_title' => 'Create Role',
+        'edit_title' => 'Edit Role',
+        'show_title' => 'Show Role',
+        'inputs' => [
+            'name' => 'Name',
+        ],
+    ],
+
+    'permissions' => [
+        'name' => 'Permissions',
+        'index_title' => 'Permissions List',
+        'create_title' => 'Create Permission',
+        'edit_title' => 'Edit Permission',
+        'show_title' => 'Show Permission',
+        'inputs' => [
+            'name' => 'Name',
+        ],
+    ],
 ];

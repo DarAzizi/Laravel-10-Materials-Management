@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Scopes\Searchable;
+use Spatie\Permission\Traits\HasRoles;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -13,6 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use HasRoles;
     use Notifiable;
     use HasFactory;
     use Searchable;
@@ -20,7 +22,7 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use TwoFactorAuthenticatable;
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'gender', 'mobile', 'email', 'password'];
 
     protected $searchableFields = ['*'];
 
@@ -38,6 +40,6 @@ class User extends Authenticatable
 
     public function isSuperAdmin(): bool
     {
-        return in_array($this->email, config('auth.super_admins'));
+        return $this->hasRole('super-admin');
     }
 }
