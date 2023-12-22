@@ -6,14 +6,21 @@ use App\Models\Scopes\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Nature extends Model
+class EquipmentCode extends Model
 {
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['Nature'];
+    protected $fillable = ['Name', 'Description', 'Drawing', 'jet_position_id'];
 
     protected $searchableFields = ['*'];
+
+    protected $table = 'equipment_codes';
+
+    public function jetPosition()
+    {
+        return $this->belongsTo(JetPosition::class);
+    }
 
     public function materials()
     {

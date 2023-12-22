@@ -24,7 +24,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CitySeeder::class);
         $this->call(ContractorSeeder::class);
         $this->call(CountrySeeder::class);
+        $this->call(EquipmentCodeSeeder::class);
+        $this->call(JetSeeder::class);
+        $this->call(JetPositionSeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(MaterialSeeder::class);
         $this->call(NatureSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(SubCategorySeeder::class);

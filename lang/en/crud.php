@@ -228,6 +228,66 @@ return [
         ],
     ],
 
+    'equipment_codes' => [
+        'name' => 'Equipment Codes',
+        'index_title' => 'EquipmentCodes List',
+        'new_title' => 'New Equipment code',
+        'create_title' => 'Create EquipmentCode',
+        'edit_title' => 'Edit EquipmentCode',
+        'show_title' => 'Show EquipmentCode',
+        'inputs' => [
+            'Name' => 'Name',
+            'Description' => 'Description',
+            'Drawing' => 'Drawing',
+            'jet_position_id' => 'Jet Position',
+        ],
+    ],
+
+    'jets' => [
+        'name' => 'Jets',
+        'index_title' => 'Jets List',
+        'new_title' => 'New Jet',
+        'create_title' => 'Create Jet',
+        'edit_title' => 'Edit Jet',
+        'show_title' => 'Show Jet',
+        'inputs' => [
+            'Name' => 'Name',
+            'Description' => 'Description',
+        ],
+    ],
+
+    'jet_positions' => [
+        'name' => 'Jet Positions',
+        'index_title' => 'JetPositions List',
+        'new_title' => 'New Jet position',
+        'create_title' => 'Create JetPosition',
+        'edit_title' => 'Edit JetPosition',
+        'show_title' => 'Show JetPosition',
+        'inputs' => [
+            'Position' => 'Position',
+            'Description' => 'Description',
+            'jet_id' => 'Jet',
+        ],
+    ],
+
+    'materials' => [
+        'name' => 'Materials',
+        'index_title' => 'Materials List',
+        'new_title' => 'New Material',
+        'create_title' => 'Create Material',
+        'edit_title' => 'Edit Material',
+        'show_title' => 'Show Material',
+        'inputs' => [
+            'Name' => 'Name',
+            'ItemCode' => 'Item Code',
+            'Description' => 'Description',
+            'Quantity' => 'Quantity',
+            'jet_position_id' => 'Jet Position',
+            'equipment_code_id' => 'Equipment Code',
+            'nature_id' => 'Nature',
+        ],
+    ],
+
     'roles' => [
         'name' => 'Roles',
         'index_title' => 'Roles List',

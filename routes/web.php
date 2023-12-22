@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JetController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CityController;
@@ -10,11 +11,14 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ContractorController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SubLocationController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\JetPositionController;
+use App\Http\Controllers\EquipmentCodeController;
 use App\Http\Controllers\SubSubLocationController;
 use App\Http\Controllers\SubSubCategoryController;
 use App\Http\Controllers\SubSubSubLocationController;
@@ -68,4 +72,8 @@ Route::prefix('/')
             SubSubSubCategoryController::class
         );
         Route::resource('natures', NatureController::class);
+        Route::resource('equipment-codes', EquipmentCodeController::class);
+        Route::resource('jets', JetController::class);
+        Route::resource('jet-positions', JetPositionController::class);
+        Route::resource('materials', MaterialController::class);
     });

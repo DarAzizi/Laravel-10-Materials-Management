@@ -93,6 +93,26 @@
                         Natures
                         </x-dropdown-link>
                         @endcan
+                        @can('view-any', App\Models\EquipmentCode::class)
+                        <x-dropdown-link href="{{ route('equipment-codes.index') }}">
+                        Equipment Codes
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\Jet::class)
+                        <x-dropdown-link href="{{ route('jets.index') }}">
+                        Jets
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\JetPosition::class)
+                        <x-dropdown-link href="{{ route('jet-positions.index') }}">
+                        Jet Positions
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\Material::class)
+                        <x-dropdown-link href="{{ route('materials.index') }}">
+                        Materials
+                        </x-dropdown-link>
+                        @endcan
                 </x-nav-dropdown>
 
                     @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
@@ -308,6 +328,26 @@
                 @can('view-any', App\Models\Nature::class)
                 <x-responsive-nav-link href="{{ route('natures.index') }}">
                 Natures
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\EquipmentCode::class)
+                <x-responsive-nav-link href="{{ route('equipment-codes.index') }}">
+                Equipment Codes
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Jet::class)
+                <x-responsive-nav-link href="{{ route('jets.index') }}">
+                Jets
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\JetPosition::class)
+                <x-responsive-nav-link href="{{ route('jet-positions.index') }}">
+                Jet Positions
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Material::class)
+                <x-responsive-nav-link href="{{ route('materials.index') }}">
+                Materials
                 </x-responsive-nav-link>
                 @endcan
 

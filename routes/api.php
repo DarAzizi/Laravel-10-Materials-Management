@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\JetController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\AuthController;
@@ -11,23 +12,31 @@ use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\MaterialController;
 use App\Http\Controllers\Api\WarehouseController;
 use App\Http\Controllers\Api\ContractorController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\SubLocationController;
 use App\Http\Controllers\Api\SubCategoryController;
+use App\Http\Controllers\Api\JetPositionController;
 use App\Http\Controllers\Api\CityProjectsController;
 use App\Http\Controllers\Api\CountryCitiesController;
+use App\Http\Controllers\Api\EquipmentCodeController;
 use App\Http\Controllers\Api\UserWarehousesController;
 use App\Http\Controllers\Api\SubSubLocationController;
 use App\Http\Controllers\Api\SubSubCategoryController;
+use App\Http\Controllers\Api\NatureMaterialsController;
+use App\Http\Controllers\Api\JetJetPositionsController;
 use App\Http\Controllers\Api\ProjectWarehousesController;
 use App\Http\Controllers\Api\SubSubSubLocationController;
 use App\Http\Controllers\Api\SubSubSubCategoryController;
 use App\Http\Controllers\Api\ContractorProjectsController;
 use App\Http\Controllers\Api\WarehouseLocationsController;
 use App\Http\Controllers\Api\LocationSubLocationsController;
+use App\Http\Controllers\Api\JetPositionMaterialsController;
 use App\Http\Controllers\Api\CategorySubCategoriesController;
+use App\Http\Controllers\Api\EquipmentCodeMaterialsController;
+use App\Http\Controllers\Api\JetPositionEquipmentCodesController;
 use App\Http\Controllers\Api\SubLocationSubSubLocationsController;
 use App\Http\Controllers\Api\SubCategorySubSubCategoriesController;
 use App\Http\Controllers\Api\SubSubLocationSubSubSubLocationsController;
@@ -219,4 +228,62 @@ Route::name('api.')
         );
 
         Route::apiResource('natures', NatureController::class);
+
+        // Nature Materials
+        Route::get('/natures/{nature}/materials', [
+            NatureMaterialsController::class,
+            'index',
+        ])->name('natures.materials.index');
+        Route::post('/natures/{nature}/materials', [
+            NatureMaterialsController::class,
+            'store',
+        ])->name('natures.materials.store');
+
+        Route::apiResource('equipment-codes', EquipmentCodeController::class);
+
+        // EquipmentCode Materials
+        Route::get('/equipment-codes/{equipmentCode}/materials', [
+            EquipmentCodeMaterialsController::class,
+            'index',
+        ])->name('equipment-codes.materials.index');
+        Route::post('/equipment-codes/{equipmentCode}/materials', [
+            EquipmentCodeMaterialsController::class,
+            'store',
+        ])->name('equipment-codes.materials.store');
+
+        Route::apiResource('jets', JetController::class);
+
+        // Jet Jet Positions
+        Route::get('/jets/{jet}/jet-positions', [
+            JetJetPositionsController::class,
+            'index',
+        ])->name('jets.jet-positions.index');
+        Route::post('/jets/{jet}/jet-positions', [
+            JetJetPositionsController::class,
+            'store',
+        ])->name('jets.jet-positions.store');
+
+        Route::apiResource('jet-positions', JetPositionController::class);
+
+        // JetPosition Equipment Codes
+        Route::get('/jet-positions/{jetPosition}/equipment-codes', [
+            JetPositionEquipmentCodesController::class,
+            'index',
+        ])->name('jet-positions.equipment-codes.index');
+        Route::post('/jet-positions/{jetPosition}/equipment-codes', [
+            JetPositionEquipmentCodesController::class,
+            'store',
+        ])->name('jet-positions.equipment-codes.store');
+
+        // JetPosition Materials
+        Route::get('/jet-positions/{jetPosition}/materials', [
+            JetPositionMaterialsController::class,
+            'index',
+        ])->name('jet-positions.materials.index');
+        Route::post('/jet-positions/{jetPosition}/materials', [
+            JetPositionMaterialsController::class,
+            'store',
+        ])->name('jet-positions.materials.store');
+
+        Route::apiResource('materials', MaterialController::class);
     });

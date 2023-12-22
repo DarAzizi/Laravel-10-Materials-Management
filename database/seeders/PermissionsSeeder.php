@@ -39,11 +39,35 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update countries']);
         Permission::create(['name' => 'delete countries']);
 
+        Permission::create(['name' => 'list equipmentcodes']);
+        Permission::create(['name' => 'view equipmentcodes']);
+        Permission::create(['name' => 'create equipmentcodes']);
+        Permission::create(['name' => 'update equipmentcodes']);
+        Permission::create(['name' => 'delete equipmentcodes']);
+
+        Permission::create(['name' => 'list jets']);
+        Permission::create(['name' => 'view jets']);
+        Permission::create(['name' => 'create jets']);
+        Permission::create(['name' => 'update jets']);
+        Permission::create(['name' => 'delete jets']);
+
+        Permission::create(['name' => 'list jetpositions']);
+        Permission::create(['name' => 'view jetpositions']);
+        Permission::create(['name' => 'create jetpositions']);
+        Permission::create(['name' => 'update jetpositions']);
+        Permission::create(['name' => 'delete jetpositions']);
+
         Permission::create(['name' => 'list locations']);
         Permission::create(['name' => 'view locations']);
         Permission::create(['name' => 'create locations']);
         Permission::create(['name' => 'update locations']);
         Permission::create(['name' => 'delete locations']);
+
+        Permission::create(['name' => 'list materials']);
+        Permission::create(['name' => 'view materials']);
+        Permission::create(['name' => 'create materials']);
+        Permission::create(['name' => 'update materials']);
+        Permission::create(['name' => 'delete materials']);
 
         Permission::create(['name' => 'list natures']);
         Permission::create(['name' => 'view natures']);
