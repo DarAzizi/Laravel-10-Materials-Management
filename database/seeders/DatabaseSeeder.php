@@ -20,13 +20,18 @@ class DatabaseSeeder extends Seeder
             ]);
         $this->call(PermissionsSeeder::class);
 
+        $this->call(CategorySeeder::class);
         $this->call(CitySeeder::class);
         $this->call(ContractorSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(LocationSeeder::class);
+        $this->call(NatureSeeder::class);
         $this->call(ProjectSeeder::class);
+        $this->call(SubCategorySeeder::class);
         $this->call(SubLocationSeeder::class);
+        $this->call(SubSubCategorySeeder::class);
         $this->call(SubSubLocationSeeder::class);
+        $this->call(SubSubSubCategorySeeder::class);
         $this->call(SubSubSubLocationSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(WarehouseSeeder::class);

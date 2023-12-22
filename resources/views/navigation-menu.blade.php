@@ -68,6 +68,31 @@
                         Sub Sub Sub Locations
                         </x-dropdown-link>
                         @endcan
+                        @can('view-any', App\Models\Category::class)
+                        <x-dropdown-link href="{{ route('categories.index') }}">
+                        Categories
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\SubCategory::class)
+                        <x-dropdown-link href="{{ route('sub-categories.index') }}">
+                        Sub Categories
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\SubSubCategory::class)
+                        <x-dropdown-link href="{{ route('sub-sub-categories.index') }}">
+                        Sub Sub Categories
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\SubSubSubCategory::class)
+                        <x-dropdown-link href="{{ route('sub-sub-sub-categories.index') }}">
+                        Sub Sub Sub Categories
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\Nature::class)
+                        <x-dropdown-link href="{{ route('natures.index') }}">
+                        Natures
+                        </x-dropdown-link>
+                        @endcan
                 </x-nav-dropdown>
 
                     @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
@@ -258,6 +283,31 @@
                 @can('view-any', App\Models\SubSubSubLocation::class)
                 <x-responsive-nav-link href="{{ route('sub-sub-sub-locations.index') }}">
                 Sub Sub Sub Locations
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Category::class)
+                <x-responsive-nav-link href="{{ route('categories.index') }}">
+                Categories
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\SubCategory::class)
+                <x-responsive-nav-link href="{{ route('sub-categories.index') }}">
+                Sub Categories
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\SubSubCategory::class)
+                <x-responsive-nav-link href="{{ route('sub-sub-categories.index') }}">
+                Sub Sub Categories
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\SubSubSubCategory::class)
+                <x-responsive-nav-link href="{{ route('sub-sub-sub-categories.index') }}">
+                Sub Sub Sub Categories
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Nature::class)
+                <x-responsive-nav-link href="{{ route('natures.index') }}">
+                Natures
                 </x-responsive-nav-link>
                 @endcan
 

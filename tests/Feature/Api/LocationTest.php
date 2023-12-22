@@ -5,6 +5,8 @@ namespace Tests\Feature\Api;
 use App\Models\User;
 use App\Models\Location;
 
+use App\Models\Warehouse;
+
 use Tests\TestCase;
 use Laravel\Sanctum\Sanctum;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -52,6 +54,8 @@ class LocationTest extends TestCase
 
         $response = $this->postJson(route('api.locations.store'), $data);
 
+        unset($data['warehouse_id']);
+
         $this->assertDatabaseHas('locations', $data);
 
         $response->assertStatus(201)->assertJsonFragment($data);
@@ -64,15 +68,20 @@ class LocationTest extends TestCase
     {
         $location = Location::factory()->create();
 
+        $warehouse = Warehouse::factory()->create();
+
         $data = [
             'Name' => $this->faker->name(),
             'Description' => $this->faker->sentence(15),
+            'warehouse_id' => $warehouse->id,
         ];
 
         $response = $this->putJson(
             route('api.locations.update', $location),
             $data
         );
+
+        unset($data['warehouse_id']);
 
         $data['id'] = $location->id;
 

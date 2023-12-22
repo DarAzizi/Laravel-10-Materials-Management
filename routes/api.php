@@ -6,23 +6,32 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\CityController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\NatureController;
 use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\LocationController;
+use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\WarehouseController;
 use App\Http\Controllers\Api\ContractorController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\SubLocationController;
+use App\Http\Controllers\Api\SubCategoryController;
 use App\Http\Controllers\Api\CityProjectsController;
 use App\Http\Controllers\Api\CountryCitiesController;
 use App\Http\Controllers\Api\UserWarehousesController;
 use App\Http\Controllers\Api\SubSubLocationController;
+use App\Http\Controllers\Api\SubSubCategoryController;
 use App\Http\Controllers\Api\ProjectWarehousesController;
 use App\Http\Controllers\Api\SubSubSubLocationController;
+use App\Http\Controllers\Api\SubSubSubCategoryController;
 use App\Http\Controllers\Api\ContractorProjectsController;
+use App\Http\Controllers\Api\WarehouseLocationsController;
 use App\Http\Controllers\Api\LocationSubLocationsController;
+use App\Http\Controllers\Api\CategorySubCategoriesController;
 use App\Http\Controllers\Api\SubLocationSubSubLocationsController;
+use App\Http\Controllers\Api\SubCategorySubSubCategoriesController;
 use App\Http\Controllers\Api\SubSubLocationSubSubSubLocationsController;
+use App\Http\Controllers\Api\SubSubCategorySubSubSubCategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +120,16 @@ Route::name('api.')
 
         Route::apiResource('warehouses', WarehouseController::class);
 
+        // Warehouse Locations
+        Route::get('/warehouses/{warehouse}/locations', [
+            WarehouseLocationsController::class,
+            'index',
+        ])->name('warehouses.locations.index');
+        Route::post('/warehouses/{warehouse}/locations', [
+            WarehouseLocationsController::class,
+            'store',
+        ])->name('warehouses.locations.store');
+
         Route::apiResource('locations', LocationController::class);
 
         // Location Sub Locations
@@ -154,4 +173,50 @@ Route::name('api.')
             'sub-sub-sub-locations',
             SubSubSubLocationController::class
         );
+
+        Route::apiResource('categories', CategoryController::class);
+
+        // Category Sub Categories
+        Route::get('/categories/{category}/sub-categories', [
+            CategorySubCategoriesController::class,
+            'index',
+        ])->name('categories.sub-categories.index');
+        Route::post('/categories/{category}/sub-categories', [
+            CategorySubCategoriesController::class,
+            'store',
+        ])->name('categories.sub-categories.store');
+
+        Route::apiResource('sub-categories', SubCategoryController::class);
+
+        // SubCategory Sub Sub Categories
+        Route::get('/sub-categories/{subCategory}/sub-sub-categories', [
+            SubCategorySubSubCategoriesController::class,
+            'index',
+        ])->name('sub-categories.sub-sub-categories.index');
+        Route::post('/sub-categories/{subCategory}/sub-sub-categories', [
+            SubCategorySubSubCategoriesController::class,
+            'store',
+        ])->name('sub-categories.sub-sub-categories.store');
+
+        Route::apiResource(
+            'sub-sub-categories',
+            SubSubCategoryController::class
+        );
+
+        // SubSubCategory Sub Sub Sub Categories
+        Route::get(
+            '/sub-sub-categories/{subSubCategory}/sub-sub-sub-categories',
+            [SubSubCategorySubSubSubCategoriesController::class, 'index']
+        )->name('sub-sub-categories.sub-sub-sub-categories.index');
+        Route::post(
+            '/sub-sub-categories/{subSubCategory}/sub-sub-sub-categories',
+            [SubSubCategorySubSubSubCategoriesController::class, 'store']
+        )->name('sub-sub-categories.sub-sub-sub-categories.store');
+
+        Route::apiResource(
+            'sub-sub-sub-categories',
+            SubSubSubCategoryController::class
+        );
+
+        Route::apiResource('natures', NatureController::class);
     });

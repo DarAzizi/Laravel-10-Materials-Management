@@ -25,6 +25,7 @@ class LocationFactory extends Factory
         return [
             'Name' => $this->faker->name(),
             'Description' => $this->faker->sentence(15),
+            'warehouse_id' => \App\Models\Warehouse::factory(),
         ];
     }
 }

@@ -5,6 +5,8 @@ namespace Tests\Feature\Controllers;
 use App\Models\User;
 use App\Models\Location;
 
+use App\Models\Warehouse;
+
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -64,6 +66,8 @@ class LocationControllerTest extends TestCase
 
         $response = $this->post(route('locations.store'), $data);
 
+        unset($data['warehouse_id']);
+
         $this->assertDatabaseHas('locations', $data);
 
         $location = Location::latest('id')->first();
@@ -108,12 +112,17 @@ class LocationControllerTest extends TestCase
     {
         $location = Location::factory()->create();
 
+        $warehouse = Warehouse::factory()->create();
+
         $data = [
             'Name' => $this->faker->name(),
             'Description' => $this->faker->sentence(15),
+            'warehouse_id' => $warehouse->id,
         ];
 
         $response = $this->put(route('locations.update', $location), $data);
+
+        unset($data['warehouse_id']);
 
         $data['id'] = $location->id;
 

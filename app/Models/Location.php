@@ -11,12 +11,17 @@ class Location extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['Name', 'Description'];
+    protected $fillable = ['Name', 'Description', 'warehouse_id'];
 
     protected $searchableFields = ['*'];
 
     public function subLocations()
     {
         return $this->hasMany(SubLocation::class);
+    }
+
+    public function warehouse()
+    {
+        return $this->belongsTo(Warehouse::class);
     }
 }

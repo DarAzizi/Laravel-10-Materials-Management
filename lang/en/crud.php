@@ -105,7 +105,7 @@ return [
             'Name' => 'Warehouse Name',
             'Description' => 'Warehouse Description',
             'project_id' => 'Project Name',
-            'user_id' => 'Material Manager',
+            'user_id' => 'User',
             'Address' => 'Warehouse Address',
             'email' => 'Warehouse Email',
         ],
@@ -160,6 +160,71 @@ return [
         'inputs' => [
             'Name' => 'Sub Sub Sub Location',
             'sub_sub_location_id' => 'Sub Sub Location',
+        ],
+    ],
+
+    'categories' => [
+        'name' => 'Categories',
+        'index_title' => 'Categories List',
+        'new_title' => 'New Category',
+        'create_title' => 'Create Category',
+        'edit_title' => 'Edit Category',
+        'show_title' => 'Show Category',
+        'inputs' => [
+            'Name' => 'Name',
+            'Image' => 'Image',
+            'Description' => 'Description',
+        ],
+    ],
+
+    'sub_categories' => [
+        'name' => 'Sub Categories',
+        'index_title' => 'SubCategories List',
+        'new_title' => 'New Sub category',
+        'create_title' => 'Create SubCategory',
+        'edit_title' => 'Edit SubCategory',
+        'show_title' => 'Show SubCategory',
+        'inputs' => [
+            'Name' => 'Name',
+            'category_id' => 'Category',
+        ],
+    ],
+
+    'sub_sub_categories' => [
+        'name' => 'Sub Sub Categories',
+        'index_title' => 'SubSubCategories List',
+        'new_title' => 'New Sub sub category',
+        'create_title' => 'Create SubSubCategory',
+        'edit_title' => 'Edit SubSubCategory',
+        'show_title' => 'Show SubSubCategory',
+        'inputs' => [
+            'Name' => 'Name',
+            'sub_category_id' => 'Sub Category',
+        ],
+    ],
+
+    'sub_sub_sub_categories' => [
+        'name' => 'Sub Sub Sub Categories',
+        'index_title' => 'SubSubSubCategories List',
+        'new_title' => 'New Sub sub sub category',
+        'create_title' => 'Create SubSubSubCategory',
+        'edit_title' => 'Edit SubSubSubCategory',
+        'show_title' => 'Show SubSubSubCategory',
+        'inputs' => [
+            'Name' => 'Name',
+            'sub_sub_category_id' => 'Sub Sub Category',
+        ],
+    ],
+
+    'natures' => [
+        'name' => 'Natures',
+        'index_title' => 'Natures List',
+        'new_title' => 'New Nature',
+        'create_title' => 'Create Nature',
+        'edit_title' => 'Edit Nature',
+        'show_title' => 'Show Nature',
+        'inputs' => [
+            'Nature' => 'Nature',
         ],
     ],
 

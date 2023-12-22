@@ -15,6 +15,12 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Create default permissions
+        Permission::create(['name' => 'list categories']);
+        Permission::create(['name' => 'view categories']);
+        Permission::create(['name' => 'create categories']);
+        Permission::create(['name' => 'update categories']);
+        Permission::create(['name' => 'delete categories']);
+
         Permission::create(['name' => 'list cities']);
         Permission::create(['name' => 'view cities']);
         Permission::create(['name' => 'create cities']);
@@ -39,11 +45,23 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update locations']);
         Permission::create(['name' => 'delete locations']);
 
+        Permission::create(['name' => 'list natures']);
+        Permission::create(['name' => 'view natures']);
+        Permission::create(['name' => 'create natures']);
+        Permission::create(['name' => 'update natures']);
+        Permission::create(['name' => 'delete natures']);
+
         Permission::create(['name' => 'list projects']);
         Permission::create(['name' => 'view projects']);
         Permission::create(['name' => 'create projects']);
         Permission::create(['name' => 'update projects']);
         Permission::create(['name' => 'delete projects']);
+
+        Permission::create(['name' => 'list subcategories']);
+        Permission::create(['name' => 'view subcategories']);
+        Permission::create(['name' => 'create subcategories']);
+        Permission::create(['name' => 'update subcategories']);
+        Permission::create(['name' => 'delete subcategories']);
 
         Permission::create(['name' => 'list sublocations']);
         Permission::create(['name' => 'view sublocations']);
@@ -51,11 +69,23 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update sublocations']);
         Permission::create(['name' => 'delete sublocations']);
 
+        Permission::create(['name' => 'list subsubcategories']);
+        Permission::create(['name' => 'view subsubcategories']);
+        Permission::create(['name' => 'create subsubcategories']);
+        Permission::create(['name' => 'update subsubcategories']);
+        Permission::create(['name' => 'delete subsubcategories']);
+
         Permission::create(['name' => 'list subsublocations']);
         Permission::create(['name' => 'view subsublocations']);
         Permission::create(['name' => 'create subsublocations']);
         Permission::create(['name' => 'update subsublocations']);
         Permission::create(['name' => 'delete subsublocations']);
+
+        Permission::create(['name' => 'list subsubsubcategories']);
+        Permission::create(['name' => 'view subsubsubcategories']);
+        Permission::create(['name' => 'create subsubsubcategories']);
+        Permission::create(['name' => 'update subsubsubcategories']);
+        Permission::create(['name' => 'delete subsubsubcategories']);
 
         Permission::create(['name' => 'list subsubsublocations']);
         Permission::create(['name' => 'view subsubsublocations']);

@@ -27,6 +27,11 @@ class Warehouse extends Model
         return $this->belongsTo(Project::class);
     }
 
+    public function locations()
+    {
+        return $this->hasMany(Location::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

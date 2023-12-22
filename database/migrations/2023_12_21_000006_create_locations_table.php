@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('Name');
             $table->text('Description');
+            $table->unsignedBigInteger('warehouse_id');
 
             $table->timestamps();
         });
