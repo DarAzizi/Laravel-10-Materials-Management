@@ -8,14 +8,21 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\LocationController;
 use App\Http\Controllers\Api\WarehouseController;
 use App\Http\Controllers\Api\ContractorController;
 use App\Http\Controllers\Api\PermissionController;
+use App\Http\Controllers\Api\SubLocationController;
 use App\Http\Controllers\Api\CityProjectsController;
 use App\Http\Controllers\Api\CountryCitiesController;
 use App\Http\Controllers\Api\UserWarehousesController;
+use App\Http\Controllers\Api\SubSubLocationController;
 use App\Http\Controllers\Api\ProjectWarehousesController;
+use App\Http\Controllers\Api\SubSubSubLocationController;
 use App\Http\Controllers\Api\ContractorProjectsController;
+use App\Http\Controllers\Api\LocationSubLocationsController;
+use App\Http\Controllers\Api\SubLocationSubSubLocationsController;
+use App\Http\Controllers\Api\SubSubLocationSubSubSubLocationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,4 +110,48 @@ Route::name('api.')
         ])->name('contractors.projects.store');
 
         Route::apiResource('warehouses', WarehouseController::class);
+
+        Route::apiResource('locations', LocationController::class);
+
+        // Location Sub Locations
+        Route::get('/locations/{location}/sub-locations', [
+            LocationSubLocationsController::class,
+            'index',
+        ])->name('locations.sub-locations.index');
+        Route::post('/locations/{location}/sub-locations', [
+            LocationSubLocationsController::class,
+            'store',
+        ])->name('locations.sub-locations.store');
+
+        Route::apiResource('sub-locations', SubLocationController::class);
+
+        // SubLocation Sub Sub Locations
+        Route::get('/sub-locations/{subLocation}/sub-sub-locations', [
+            SubLocationSubSubLocationsController::class,
+            'index',
+        ])->name('sub-locations.sub-sub-locations.index');
+        Route::post('/sub-locations/{subLocation}/sub-sub-locations', [
+            SubLocationSubSubLocationsController::class,
+            'store',
+        ])->name('sub-locations.sub-sub-locations.store');
+
+        Route::apiResource(
+            'sub-sub-locations',
+            SubSubLocationController::class
+        );
+
+        // SubSubLocation Sub Sub Sub Locations
+        Route::get(
+            '/sub-sub-locations/{subSubLocation}/sub-sub-sub-locations',
+            [SubSubLocationSubSubSubLocationsController::class, 'index']
+        )->name('sub-sub-locations.sub-sub-sub-locations.index');
+        Route::post(
+            '/sub-sub-locations/{subSubLocation}/sub-sub-sub-locations',
+            [SubSubLocationSubSubSubLocationsController::class, 'store']
+        )->name('sub-sub-locations.sub-sub-sub-locations.store');
+
+        Route::apiResource(
+            'sub-sub-sub-locations',
+            SubSubSubLocationController::class
+        );
     });

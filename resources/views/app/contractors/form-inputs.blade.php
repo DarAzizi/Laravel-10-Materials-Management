@@ -4,10 +4,10 @@
     <x-inputs.group class="w-full">
         <x-inputs.text
             name="Name"
-            label="Name"
+            label="Contractor Name"
             :value="old('Name', ($editing ? $contractor->Name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="Ex: ABB , DANIELI, Saipem..."
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -18,7 +18,7 @@
         >
             <x-inputs.partials.label
                 name="Image"
-                label="Image"
+                label="Contractor Logo"
             ></x-inputs.partials.label
             ><br />
 
@@ -56,7 +56,7 @@
     <x-inputs.group class="w-full">
         <x-inputs.textarea
             name="Description"
-            label="Description"
+            label="Contractor Description"
             maxlength="255"
             required
             >{{ old('Description', ($editing ? $contractor->Description : ''))

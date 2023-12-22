@@ -7,9 +7,13 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ContractorController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\SubLocationController;
+use App\Http\Controllers\SubSubLocationController;
+use App\Http\Controllers\SubSubSubLocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +48,11 @@ Route::prefix('/')
         Route::resource('projects', ProjectController::class);
         Route::resource('contractors', ContractorController::class);
         Route::resource('warehouses', WarehouseController::class);
+        Route::resource('locations', LocationController::class);
+        Route::resource('sub-locations', SubLocationController::class);
+        Route::resource('sub-sub-locations', SubSubLocationController::class);
+        Route::resource(
+            'sub-sub-sub-locations',
+            SubSubSubLocationController::class
+        );
     });

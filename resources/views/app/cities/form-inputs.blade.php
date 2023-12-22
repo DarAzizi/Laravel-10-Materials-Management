@@ -4,10 +4,10 @@
     <x-inputs.group class="w-full">
         <x-inputs.text
             name="Name"
-            label="Name"
+            label="City Name"
             :value="old('Name', ($editing ? $city->Name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="City Name"
             required
         ></x-inputs.text>
     </x-inputs.group>

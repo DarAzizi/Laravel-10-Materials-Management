@@ -48,6 +48,26 @@
                         Warehouses
                         </x-dropdown-link>
                         @endcan
+                        @can('view-any', App\Models\Location::class)
+                        <x-dropdown-link href="{{ route('locations.index') }}">
+                        Locations
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\SubLocation::class)
+                        <x-dropdown-link href="{{ route('sub-locations.index') }}">
+                        Sub Locations
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\SubSubLocation::class)
+                        <x-dropdown-link href="{{ route('sub-sub-locations.index') }}">
+                        Sub Sub Locations
+                        </x-dropdown-link>
+                        @endcan
+                        @can('view-any', App\Models\SubSubSubLocation::class)
+                        <x-dropdown-link href="{{ route('sub-sub-sub-locations.index') }}">
+                        Sub Sub Sub Locations
+                        </x-dropdown-link>
+                        @endcan
                 </x-nav-dropdown>
 
                     @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
@@ -218,6 +238,26 @@
                 @can('view-any', App\Models\Warehouse::class)
                 <x-responsive-nav-link href="{{ route('warehouses.index') }}">
                 Warehouses
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\Location::class)
+                <x-responsive-nav-link href="{{ route('locations.index') }}">
+                Locations
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\SubLocation::class)
+                <x-responsive-nav-link href="{{ route('sub-locations.index') }}">
+                Sub Locations
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\SubSubLocation::class)
+                <x-responsive-nav-link href="{{ route('sub-sub-locations.index') }}">
+                Sub Sub Locations
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\SubSubSubLocation::class)
+                <x-responsive-nav-link href="{{ route('sub-sub-sub-locations.index') }}">
+                Sub Sub Sub Locations
                 </x-responsive-nav-link>
                 @endcan
 

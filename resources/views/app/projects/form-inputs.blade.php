@@ -4,10 +4,10 @@
     <x-inputs.group class="w-full">
         <x-inputs.text
             name="Name"
-            label="Name"
+            label="Project Name"
             :value="old('Name', ($editing ? $project->Name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="Name of the Project"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -15,7 +15,7 @@
     <x-inputs.group class="w-full">
         <x-inputs.textarea
             name="Description"
-            label="Description"
+            label="Project Description"
             maxlength="255"
             required
             >{{ old('Description', ($editing ? $project->Description : ''))
