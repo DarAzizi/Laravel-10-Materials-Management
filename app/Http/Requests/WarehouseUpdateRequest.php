@@ -24,6 +24,8 @@ class WarehouseUpdateRequest extends FormRequest
             'Description' => ['required', 'max:255', 'string'],
             'project_id' => ['required', 'exists:projects,id'],
             'user_id' => ['required', 'exists:users,id'],
+            'Address' => ['required', 'max:255', 'string'],
+            'email' => ['required', 'email'],
         ];
     }
 }

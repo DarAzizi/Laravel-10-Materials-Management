@@ -4,10 +4,10 @@
     <x-inputs.group class="w-full">
         <x-inputs.text
             name="Name"
-            label="Name"
+            label="Country Name"
             :value="old('Name', ($editing ? $country->Name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="Country Name"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -18,7 +18,7 @@
         >
             <x-inputs.partials.label
                 name="Image"
-                label="Image"
+                label="Flag"
             ></x-inputs.partials.label
             ><br />
 

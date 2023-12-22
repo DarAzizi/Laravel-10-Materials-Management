@@ -116,6 +116,8 @@ class WarehouseControllerTest extends TestCase
         $data = [
             'Name' => $this->faker->name(),
             'Description' => $this->faker->sentence(15),
+            'Address' => $this->faker->address(),
+            'email' => $this->faker->email(),
             'project_id' => $project->id,
             'user_id' => $user->id,
         ];

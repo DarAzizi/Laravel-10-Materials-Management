@@ -23,7 +23,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CitySeeder::class);
         $this->call(ContractorSeeder::class);
         $this->call(CountrySeeder::class);
+        $this->call(LocationSeeder::class);
         $this->call(ProjectSeeder::class);
+        $this->call(SubLocationSeeder::class);
+        $this->call(SubSubLocationSeeder::class);
+        $this->call(SubSubSubLocationSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(WarehouseSeeder::class);
     }

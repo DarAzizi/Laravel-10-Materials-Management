@@ -35,6 +35,8 @@ class ProjectWarehousesController extends Controller
             'Name' => ['required', 'max:255', 'string'],
             'Description' => ['required', 'max:255', 'string'],
             'user_id' => ['required', 'exists:users,id'],
+            'Address' => ['required', 'max:255', 'string'],
+            'email' => ['required', 'email'],
         ]);
 
         $warehouse = $project->warehouses()->create($validated);

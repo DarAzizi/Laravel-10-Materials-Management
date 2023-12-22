@@ -44,6 +44,18 @@
                             >{{ optional($warehouse->user)->name ?? '-' }}</span
                         >
                     </div>
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
+                            @lang('crud.warehouses.inputs.Address')
+                        </h5>
+                        <span>{{ $warehouse->Address ?? '-' }}</span>
+                    </div>
+                    <div class="mb-4">
+                        <h5 class="font-medium text-gray-700">
+                            @lang('crud.warehouses.inputs.email')
+                        </h5>
+                        <span>{{ $warehouse->email ?? '-' }}</span>
+                    </div>
                 </div>
 
                 <div class="mt-10">

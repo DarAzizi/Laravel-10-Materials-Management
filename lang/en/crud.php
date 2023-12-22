@@ -47,8 +47,8 @@ return [
         'edit_title' => 'Edit Country',
         'show_title' => 'Show Country',
         'inputs' => [
-            'Name' => 'Name',
-            'Image' => 'Image',
+            'Name' => 'Country Name',
+            'Image' => 'Flag',
         ],
     ],
 
@@ -60,7 +60,7 @@ return [
         'edit_title' => 'Edit City',
         'show_title' => 'Show City',
         'inputs' => [
-            'Name' => 'Name',
+            'Name' => 'City Name',
             'country_id' => 'Country',
         ],
     ],
@@ -73,8 +73,8 @@ return [
         'edit_title' => 'Edit Project',
         'show_title' => 'Show Project',
         'inputs' => [
-            'Name' => 'Name',
-            'Description' => 'Description',
+            'Name' => 'Project Name',
+            'Description' => 'Project Description',
             'city_id' => 'City',
             'contractor_id' => 'Contractor',
         ],
@@ -88,9 +88,9 @@ return [
         'edit_title' => 'Edit Contractor',
         'show_title' => 'Show Contractor',
         'inputs' => [
-            'Name' => 'Name',
-            'Image' => 'Image',
-            'Description' => 'Description',
+            'Name' => 'Contractor Name',
+            'Image' => 'Contractor Logo',
+            'Description' => 'Contractor Description',
         ],
     ],
 
@@ -106,6 +106,60 @@ return [
             'Description' => 'Warehouse Description',
             'project_id' => 'Project Name',
             'user_id' => 'Material Manager',
+            'Address' => 'Warehouse Address',
+            'email' => 'Warehouse Email',
+        ],
+    ],
+
+    'locations' => [
+        'name' => 'Locations',
+        'index_title' => 'Locations List',
+        'new_title' => 'New Location',
+        'create_title' => 'Create Location',
+        'edit_title' => 'Edit Location',
+        'show_title' => 'Show Location',
+        'inputs' => [
+            'Name' => 'Location',
+            'Description' => 'Location Description',
+        ],
+    ],
+
+    'sub_locations' => [
+        'name' => 'Sub Locations',
+        'index_title' => 'SubLocations List',
+        'new_title' => 'New Sub location',
+        'create_title' => 'Create SubLocation',
+        'edit_title' => 'Edit SubLocation',
+        'show_title' => 'Show SubLocation',
+        'inputs' => [
+            'Name' => 'Sub Location',
+            'location_id' => 'Main Location',
+        ],
+    ],
+
+    'sub_sub_locations' => [
+        'name' => 'Sub Sub Locations',
+        'index_title' => 'SubSubLocations List',
+        'new_title' => 'New Sub sub location',
+        'create_title' => 'Create SubSubLocation',
+        'edit_title' => 'Edit SubSubLocation',
+        'show_title' => 'Show SubSubLocation',
+        'inputs' => [
+            'Name' => 'Sub Sub Location',
+            'sub_location_id' => 'Sub Location',
+        ],
+    ],
+
+    'sub_sub_sub_locations' => [
+        'name' => 'Sub Sub Sub Locations',
+        'index_title' => 'SubSubSubLocations List',
+        'new_title' => 'New Sub sub sub location',
+        'create_title' => 'Create SubSubSubLocation',
+        'edit_title' => 'Edit SubSubSubLocation',
+        'show_title' => 'Show SubSubSubLocation',
+        'inputs' => [
+            'Name' => 'Sub Sub Sub Location',
+            'sub_sub_location_id' => 'Sub Sub Location',
         ],
     ],
 

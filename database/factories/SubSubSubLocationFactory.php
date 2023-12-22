@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Warehouse;
 use Illuminate\Support\Str;
+use App\Models\SubSubSubLocation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class WarehouseFactory extends Factory
+class SubSubSubLocationFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Warehouse::class;
+    protected $model = SubSubSubLocation::class;
 
     /**
      * Define the model's default state.
@@ -24,11 +24,7 @@ class WarehouseFactory extends Factory
     {
         return [
             'Name' => $this->faker->name(),
-            'Description' => $this->faker->sentence(15),
-            'Address' => $this->faker->address(),
-            'email' => $this->faker->email(),
-            'project_id' => \App\Models\Project::factory(),
-            'user_id' => \App\Models\User::factory(),
+            'sub_sub_location_id' => \App\Models\SubSubLocation::factory(),
         ];
     }
 }

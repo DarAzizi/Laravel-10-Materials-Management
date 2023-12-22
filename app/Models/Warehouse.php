@@ -11,7 +11,14 @@ class Warehouse extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['Name', 'Description', 'project_id', 'user_id'];
+    protected $fillable = [
+        'Name',
+        'Description',
+        'project_id',
+        'user_id',
+        'Address',
+        'email',
+    ];
 
     protected $searchableFields = ['*'];
 

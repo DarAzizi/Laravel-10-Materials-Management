@@ -61,6 +61,12 @@
                                 <th class="px-4 py-3 text-left">
                                     @lang('crud.warehouses.inputs.user_id')
                                 </th>
+                                <th class="px-4 py-3 text-left">
+                                    @lang('crud.warehouses.inputs.Address')
+                                </th>
+                                <th class="px-4 py-3 text-left">
+                                    @lang('crud.warehouses.inputs.email')
+                                </th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -80,6 +86,12 @@
                                 <td class="px-4 py-3 text-left">
                                     {{ optional($warehouse->user)->name ?? '-'
                                     }}
+                                </td>
+                                <td class="px-4 py-3 text-left">
+                                    {{ $warehouse->Address ?? '-' }}
+                                </td>
+                                <td class="px-4 py-3 text-left">
+                                    {{ $warehouse->email ?? '-' }}
                                 </td>
                                 <td
                                     class="px-4 py-3 text-center"
@@ -146,7 +158,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="5">
+                                <td colspan="7">
                                     @lang('crud.common.no_items_found')
                                 </td>
                             </tr>
@@ -154,7 +166,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="5">
+                                <td colspan="7">
                                     <div class="mt-10 px-4">
                                         {!! $warehouses->render() !!}
                                     </div>

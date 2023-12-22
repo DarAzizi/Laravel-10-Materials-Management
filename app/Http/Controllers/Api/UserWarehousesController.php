@@ -33,6 +33,8 @@ class UserWarehousesController extends Controller
             'Name' => ['required', 'max:255', 'string'],
             'Description' => ['required', 'max:255', 'string'],
             'project_id' => ['required', 'exists:projects,id'],
+            'Address' => ['required', 'max:255', 'string'],
+            'email' => ['required', 'email'],
         ]);
 
         $warehouse = $user->warehouses()->create($validated);

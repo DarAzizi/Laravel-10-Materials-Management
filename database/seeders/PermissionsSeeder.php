@@ -33,11 +33,35 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update countries']);
         Permission::create(['name' => 'delete countries']);
 
+        Permission::create(['name' => 'list locations']);
+        Permission::create(['name' => 'view locations']);
+        Permission::create(['name' => 'create locations']);
+        Permission::create(['name' => 'update locations']);
+        Permission::create(['name' => 'delete locations']);
+
         Permission::create(['name' => 'list projects']);
         Permission::create(['name' => 'view projects']);
         Permission::create(['name' => 'create projects']);
         Permission::create(['name' => 'update projects']);
         Permission::create(['name' => 'delete projects']);
+
+        Permission::create(['name' => 'list sublocations']);
+        Permission::create(['name' => 'view sublocations']);
+        Permission::create(['name' => 'create sublocations']);
+        Permission::create(['name' => 'update sublocations']);
+        Permission::create(['name' => 'delete sublocations']);
+
+        Permission::create(['name' => 'list subsublocations']);
+        Permission::create(['name' => 'view subsublocations']);
+        Permission::create(['name' => 'create subsublocations']);
+        Permission::create(['name' => 'update subsublocations']);
+        Permission::create(['name' => 'delete subsublocations']);
+
+        Permission::create(['name' => 'list subsubsublocations']);
+        Permission::create(['name' => 'view subsubsublocations']);
+        Permission::create(['name' => 'create subsubsublocations']);
+        Permission::create(['name' => 'update subsubsublocations']);
+        Permission::create(['name' => 'delete subsubsublocations']);
 
         Permission::create(['name' => 'list warehouses']);
         Permission::create(['name' => 'view warehouses']);
